@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="True" name="HandheldFriendly" />
+        <title>适用于 OS X 的自动代理文件生成器（pac 文件）</title>
+        <link rel="stylesheet" type="text/css" media="screen"  href="{{ url_for('static', filename='bootstrap.min.css') }}" />
+        <link rel="stylesheet" type="text/css" media="screen"  href="/static/bootstrap-responsive.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen"  href="/static/style.css" />
+    </head>
+
+    <body>
+        <!-- Part 1: Wrap all page content here -->
+        <div id="wrap">
+
+            <!-- Begin page content -->
+            <div class="container">
+                <div class="page-header">
+                    <h1>OS X pac file generator</h1>
+                </div>
+                <p class="lead">pac 文件地址示例：</p>
+                <blockquote>
+                    <a href="http://{{ host }}/pac/127.0.0.1/7777/?v={{ time }}">http://{{ host }}/pac/127.0.0.1/7777/?v={{ time }}</a>
+                    <br />
+                    http://{{ host }}/pac/127.0.0.1/7777/server_ip/?v={{ time }}
+                </blockquote>
+
+                <p>因为 <a href="http://www.google.com/chrome">Chrome</a> 和 <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> 只认 <code>SOCKS5</code> 而不认 <code>SOCKS</code>，<a href="http://www.apple.com/safari/">Safari</a> 和其他程序则相反，所以有了这个生成器，不同的是，此生成器根据域名所对应的 ip 地址来确定是否使用代理，作用类似于 <a href="http://code.google.com/p/chnroutes/">chnroutes</a>.</p>
+            </div>
+
+            <div id="push"></div>
+        </div>
+
+        <div id="footer">
+            <div class="container">
+                <p class="muted credit">Created by <a href="http://ratazzi.org">Ratazzi</a>, Powered by <a href="http://www.appfog.com/">AppFog</a>.</p>
+            </div>
+        </div>
+    </body>
+</html>
